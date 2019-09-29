@@ -1,0 +1,15 @@
+import {StyleSheet} from 'react-native';
+
+export default {
+  PRIMARY_COLOR: '#ecf0f1',
+  PRIMARY_BACKGROUND_COLOR: '#2c3e50',
+  FONT_SIZE_SMALL: 12,
+  FONT_SIZE_MEDIUM: 14,
+  FONT_SIZE_LARGE: 16,
+  FONT_WEIGHT_LIGHT: '200',
+  FONT_WEIGHT_MEDIUM: '500',
+  FONT_WEIGHT_BOLD: '700',
+  BACKGROUND_COLOR_LIGHT: '#1abc9c',
+  CONTAINER_PADDING: 20,
+};
+

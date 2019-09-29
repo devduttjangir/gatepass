@@ -1,8 +1,31 @@
-import React from 'react';
-import {View} from 'react-native';
+import React, {Component} from 'react';
+import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
+import Theme from '../Utility/Theme';
+import LoginForm from './LoginForm'
 
-const Login = () => {
-  return <View>Login</View>;
-};
+export default class Login extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-export default Login;
+  render() {
+    return (
+      <SafeAreaView style={styles.loginContainer}>
+        <View>
+          <Text style={styles.textContainer}> Login </Text>
+        </View>
+        <LoginForm />
+      </SafeAreaView>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  loginContainer: {
+    flex: 1,
+    backgroundColor: Theme.PRIMARY_BACKGROUND_COLOR,
+  },
+  textContainer: {
+    height: 100,
+  },
+});
