@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
 import Theme from '../Utility/Theme';
-import LoginForm from './LoginForm'
+import LoginForm from './LoginForm';
 
 export default class Login extends Component {
   constructor(props) {
@@ -10,20 +10,30 @@ export default class Login extends Component {
 
   render() {
     return (
-      <SafeAreaView style={styles.loginContainer}>
-        <View>
-          <Text style={styles.textContainer}> Login </Text>
+      <SafeAreaView style={styles.viewContainer}>
+        <View />
+        <View style={styles.loginContainer}>
+          <View style={styles.logoContainer}>
+            <Text style={styles.textContainer}> GatePass </Text>
+          </View>
+          <LoginForm />
         </View>
-        <LoginForm />
       </SafeAreaView>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  viewContainer: {
+    flex: 1,
+    backgroundColor: Theme.PRIMARY_COLOR,
+  },
+  logoContainer: {
+    alignItems: 'center',
+  },
   loginContainer: {
     flex: 1,
-    backgroundColor: Theme.PRIMARY_BACKGROUND_COLOR,
+    justifyContent: 'space-between',
   },
   textContainer: {
     height: 100,

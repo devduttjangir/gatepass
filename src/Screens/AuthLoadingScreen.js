@@ -1,7 +1,7 @@
 import React from 'react';
 import {ActivityIndicator, StatusBar, View} from 'react-native';
 
-class AuthLoadingScreen extends React.Component {
+export default class AuthLoadingScreen extends React.Component {
   componentDidMount() {
     this._bootstrapAsync();
   }

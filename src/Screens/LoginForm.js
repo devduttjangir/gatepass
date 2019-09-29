@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {View, Text, TextInput, StyleSheet} from 'react-native';
+import {View, Text, TextInput, StyleSheet, Button} from 'react-native';
 import Theme from '../Utility/Theme';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 export default class LoginForm extends Component {
   constructor(props) {
@@ -10,12 +11,19 @@ export default class LoginForm extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.loginFormContainer}>
         <View>
           <TextInput style={styles.loginInput} placeholder="Username" />
         </View>
         <View>
           <TextInput style={styles.loginInput} placeholder="Password" />
+        </View>
+        <View style={styles.submitButton}>
+          <Button
+            title="Submit"
+            color={Theme.PRIMARY_COLOR}
+            onPress={() => Alert.alert('Simple Button pressed')}
+          />
         </View>
       </View>
     );
@@ -24,13 +32,26 @@ export default class LoginForm extends Component {
 
 const styles = StyleSheet.create({
   loginFormContainer: {
-    flex: 1,
+    padding: 20,
   },
   loginInput: {
     marginHorizontal: 16,
-    marginTop: 8,
+    marginVertical: 8,
+    borderColor: Theme.PRIMARY_BACKGROUND_COLOR,
+    borderRadius: Theme.BORDER_RADIUS,
+    paddingHorizontal: 16,
+    borderWidth: 0.5,
+    height: 44,
+  },
+  submitButton: {
+    marginHorizontal: 16,
+    marginVertical: 8,
     borderColor: Theme.PRIMARY_COLOR,
-    padding: 16,
-    borderWidth: 2,
+    borderRadius: Theme.BORDER_RADIUS,
+    paddingHorizontal: 16,
+    borderWidth: 0.5,
+    height: 44,
+    color: Theme.PRIMARY_COLOR,
+    backgroundColor: Theme.PRIMARY_BACKGROUND_COLOR,
   },
 });

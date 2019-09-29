@@ -11,5 +11,5 @@ export default {
   FONT_WEIGHT_BOLD: '700',
   BACKGROUND_COLOR_LIGHT: '#1abc9c',
   CONTAINER_PADDING: 20,
+  BORDER_RADIUS: 4,
 };
-
