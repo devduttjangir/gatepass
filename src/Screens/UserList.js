@@ -6,9 +6,33 @@ import {
   SafeAreaView,
   StyleSheet,
   Image,
+  Button,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class UserList extends Component {
+  static navigationOptions = ({navigation}) => {
+    const params = navigation.state.params || {};
+    return {
+      headerRight: (
+        <Icon
+          name="plus"
+          color="white"
+          size={24}
+          style={styles.barButton}
+          onPress={() => navigation.navigate('AddUser')}></Icon>
+      ),
+      headerLeft: (
+        <Icon
+          name="sign-out"
+          color="white"
+          size={24}
+          style={styles.barButton}
+          onPress={this.loginWithFacebook}></Icon>
+      ),
+      /* the rest of this config is unchanged */
+    };
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -55,7 +79,7 @@ export default class UserList extends Component {
 
   listItem = item => {
     return (
-      <View>
+      <View style={styles.cellRowContainer}>
         <View style={styles.rowContainer}>
           <View style={styles.imageContainer}>
             <Image
@@ -111,4 +135,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   textStyle: {},
+  barButton: {
+    paddingLeft: 16,
+    paddingRight: 16,
+    paddingTop: 8,
+    paddingBottom: 8,
+  },
 });
