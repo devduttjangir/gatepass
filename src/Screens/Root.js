@@ -62,14 +62,28 @@ const RootStack = createStackNavigator(
   {
     Main: {
       screen: AppStack,
+      navigationOptions: {
+        header: () => null,
+      },
     },
     AddUser: {
-      screen: AddUserStack,
+      screen: AddUser,
+      navigationOptions: {
+        headerStyle: {
+          backgroundColor: Theme.PRIMARY_BACKGROUND_COLOR,
+        },
+        headerTintColor: Theme.PRIMARY_COLOR,
+        headerTitleStyle: {
+          fontWeight: '200',
+          fontSize: 22,
+        },
+      },
     },
   },
   {
+    defaultRootName: '',
     mode: 'modal',
-    headerMode: 'none',
+    // headerMode: 'none',
   },
 );
 export default createAppContainer(
